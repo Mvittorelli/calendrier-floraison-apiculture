@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;    
+}
+
+body {
+	background-color: #f7fafd;
+	font-family: "Poppins", sans-serif;
+	padding: 20px;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
+	gap: 20px;
+
+}
+
+section {
+	background-color: #fff;
+    border-radius: 8px;
+	padding: 15px;
+	width: 100%;
+}
+
+button {
+	cursor: pointer;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 15px;
+}
+
+nav {
+	display: none;
+}
+
+h1 {
+	color: #44b53e;
+	font-size: 48px;
+}
+
+input {
+	border: none;
+	color: #b7b7b7;
+}
+
+input:focus {
+	outline: none;
+}
+
+.title {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.title p {
+	font-weight: bold;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.sort {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+#search {
+	width: 100%;
+	border: none;
+	color: #fff;
+	background-color: #38b031;
+	border-radius: 8px;
+	padding: 10px 20px;
+	transition: 300ms;
+}
+
+#search:hover {
+	background-color: #49c143;
+}
+
+.calendar {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+}
+
+.label {
+	border: 1px solid #ebebeb;
+	color: #5e6778;
+	border-radius: 727px;
+	padding: 10px 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+@media screen and (min-width: 950px) {
+    body{
+        padding: 50px;
+    }
+	nav {
+		display: block;
+	}
+    nav a  {
+        color: #000;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+        text-decoration-color: transparent;
+        text-decoration-thickness: 3px;
+        transition: 0.3s;
+        padding: 15px;
+    }
+
+    nav a:hover {
+        text-decoration-color: #263FA9;
+    }
+
+    header {
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 1424px) {
+    body{
+        padding: 75px;
+    }
+}
+  
