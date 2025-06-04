@@ -58,6 +58,23 @@ input:focus {
 
 progress {
 	background-color: #fff;
+	overflow: hidden;
+	border-radius: 727px;
+	width: 50px;
+}
+
+progress::-webkit-progress-bar {
+	background-color: white;
+}
+
+progress[value="1"] {
+	border: 2px solid #7b1b0a;
+}
+progress[value="2"] {
+	border: 2px solid #0a4c7b;
+}
+progress[value="3"] {
+	border: 2px solid #3f774a;
 }
 
 progress[value="1"]::-webkit-progress-value {
@@ -70,6 +87,90 @@ progress[value="2"]::-webkit-progress-value {
 
 progress[value="3"]::-webkit-progress-value {
 	background-color: #3f774a;
+}
+
+#result {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 40px;
+	background-color: #f7fafd;
+}
+
+#result img {
+	width: 80%;
+}
+
+.duration {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 5px;
+	color: #b7b7b7;
+	font-size: 90%;
+	width: 100%;
+}
+
+.duration img {
+	width: auto !important;
+}
+ .stat img {
+	width: 50% !important;
+
+ }
+
+
+.bold {
+	color: #000;
+	font-weight: bold;
+}
+
+.starDiv {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	justify-content: center;
+	height: fit-content;
+	width: fit-content;
+	padding: 5px;
+	border-radius: 8px;
+}
+
+.mainDiv {
+	flex-direction: column;
+	width: 80%;
+	border-radius: 8px;
+	padding: 10px;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.secondDiv {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	text-align: left;
+	gap: 15px;
+}
+
+.statDiv {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+
+.stat {
+	color: #b7b7b7;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .title {
@@ -165,15 +266,28 @@ progress[value="3"]::-webkit-progress-value {
 	header {
 		justify-content: space-between;
 	}
+
+	.mainDiv{
+		width:  100%;
+		flex-direction: row;
+	}
+
+	.duration {
+		justify-content: flex-start;
+		width:  100%;
+	}
+
+
 }
 
 @media screen and (min-width: 1424px) {
 	body,
 	section,
 	header {
-		padding: 50px;
+		padding: 30px;
 	}
 	#search {
 		padding: 20px;
 	}
+
 }

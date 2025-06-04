@@ -9,7 +9,7 @@ const api = "http://10.69.0.17:3002/v1"
 
 search.addEventListener("click", () => {
     const s = new Date(bloomStart.value)
-    const start = s.getMonth() + 1
+    const start = s.getMonth()
     console.log(start)
 
     // const e = new Date(bloomEnd.value)
@@ -68,9 +68,17 @@ function create(img, stars, name, start, end, desc, propolis, nectar, pollen) {
     const stat2p = document.createElement("p")
     const stat3p = document.createElement("p")
 
+    const stat2n = document.createElement("p")
+    const stat3n = document.createElement("p")
 
 
 
+
+
+    const nectarProgress = document.createElement("progress")
+    const pollenProgress = document.createElement("progress")
+
+    const starDiv = document.createElement("div")
 
     result.appendChild(mainDiv)
 
@@ -79,37 +87,143 @@ function create(img, stars, name, start, end, desc, propolis, nectar, pollen) {
 
     mainDiv.appendChild(secondDiv)
 
+    secondDiv.appendChild(starDiv)
+
+    for (let i = 0; i < stars; i++) {
+        const starImg = document.createElement("img")
+        starImg.src = "asset/star.svg"
+        starDiv.appendChild(starImg)
+    }
+
     secondDiv.appendChild(createh2)
-    createh2.innerText = name
+    createh2.textContent = name
 
     secondDiv.appendChild(durationDiv)
     durationDiv.appendChild(beeimg)
-    beeimg.src = "/asset/bee.svg"
+    beeimg.src = "asset/bee.svg"
 
     durationDiv.appendChild(floraison)
-    floraison.innerText = "Floraison"
+    floraison.textContent = "Floraison"
+
+
 
     durationDiv.appendChild(bold)
-    floraison.innerText = `${start} - ${end}`
+
+    const month = ["Janvier", "Février", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "décembre"]
+
+    bold.textContent = `${month[start - 1]} - ${month[end - 1]}`
 
     secondDiv.appendChild(descr)
-    descr.innerText = desc
+    descr.textContent = desc
 
     secondDiv.appendChild(statDiv)
 
     statDiv.appendChild(stat1)
-    statDiv.appendChild(stat2)
-    statDiv.appendChild(stat3)
-
     stat1.appendChild(stat1p)
-    stat1p.innerHTML("")
+    stat1p.textContent = "Propolis"
+    if (propolis !== 0) {
+        const yesImg = document.createElement("img")
+        yesImg.src = "asset/yes.svg"
+        yesImg.alt = "yes"
+        stat1.appendChild(yesImg)
+
+
+
+    } else {
+        const noImg = document.createElement("img")
+        noImg.src = "asset/no.svg"
+        noImg.alt = "no"
+
+        stat1.appendChild(noImg)
+
+    }
+
+    statDiv.appendChild(stat2)
     stat2.appendChild(stat2p)
+    stat2p.textContent = "Nectar"
+    if (nectar == 0) {
+        const noImg = document.createElement("img")
+        noImg.src = "asset/no.svg"
+        noImg.alt = "no"
+
+        stat2.appendChild(noImg)
+    } else if (nectar == 1) {
+        stat2.appendChild(stat2n)
+        stat2n.textContent = nectar
+
+        stat2.appendChild(nectarProgress)
+        nectarProgress.setAttribute("value", 1)
+        nectarProgress.setAttribute("max", 3)
+    } else if (nectar == 2) {
+        stat2.appendChild(stat2n)
+        stat2n.textContent = nectar
+
+        stat2.appendChild(nectarProgress)
+        nectarProgress.setAttribute("value", 2)
+        nectarProgress.setAttribute("max", 3)
+    } else if (nectar >= 3) {
+        stat2.appendChild(stat2n)
+        stat2n.textContent = nectar
+
+        stat2.appendChild(nectarProgress)
+        nectarProgress.setAttribute("value", 3)
+        nectarProgress.setAttribute("max", 3)
+    }
+
+    statDiv.appendChild(stat3)
     stat3.appendChild(stat3p)
+    stat3p.textContent = "Pollen"
+    if (pollen == 0) {
+        const noImg = document.createElement("img")
+        noImg.src = "asset/no.svg"
+        noImg.alt = "no"
 
+        stat3.appendChild(noImg)
+    } else if (pollen == 1) {
+        stat3.appendChild(stat3n)
+        stat3n.textContent = pollen
 
+        stat3.appendChild(pollenProgress)
+        pollenProgress.setAttribute("value", 1)
+        pollenProgress.setAttribute("max", 3)
+    } else if (pollen == 2) {
+        stat3.appendChild(stat3n)
+        stat3n.textContent = pollen
 
+        stat3.appendChild(pollenProgress)
+        pollenProgress.setAttribute("value", 2)
+        pollenProgress.setAttribute("max", 3)
+    } else if (pollen >= 3) {
+        stat3.appendChild(stat3n)
+        stat3n.textContent = pollen
 
+        stat3.appendChild(pollenProgress)
+        pollenProgress.setAttribute("value", 3)
+        pollenProgress.setAttribute("max", 3)
+    }
 
+    if (stars == 1) {
+        starDiv.style.backgroundColor = "#7B1B0A"
+    } else if (stars == 2) {
+        starDiv.style.backgroundColor = "#0a4c7b"
 
+    } else if (stars >= 3) {
+        starDiv.style.backgroundColor = "#3f774a"
 
+    }
+    mainDiv.classList.add("mainDiv")
+    secondDiv.classList.add("secondDiv")
+    starDiv.classList.add("starDiv")
+
+    statDiv.classList.add("statDiv")
+
+    stat1.classList.add("stat")
+    stat2.classList.add("stat")
+    stat3.classList.add("stat")
+
+    stat2n.classList.add("statn")
+    stat3n.classList.add("statn")
+
+    durationDiv.classList.add("duration")
+    bold.classList.add("bold")
 }
