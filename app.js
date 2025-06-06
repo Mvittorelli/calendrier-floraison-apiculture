@@ -1,6 +1,6 @@
 const search = document.querySelector("#search")
 const bloomStart = document.querySelector("#startDate")
-const bloomEnd = document.querySelector("#endDate")
+// const bloomEnd = document.querySelector("#endDate")
 
 const result = document.querySelector("#result")
 

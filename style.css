@@ -89,6 +89,31 @@ progress[value="3"]::-webkit-progress-value {
 	background-color: #3f774a;
 }
 
+.jodyBtn {
+	animation: jody 5s infinite;
+	font-weight: bold;
+}
+
+@keyframes jody {
+	0% {
+		color: red;
+	}
+	25% {
+		color: purple;
+	}
+	50% {
+		color: blue;
+	}
+
+	75% {
+		color: rgb(190, 232, 1);
+	}
+
+	100% {
+		color: green;
+	}
+}
+
 #result {
 	display: flex;
 	flex-direction: column;
@@ -99,7 +124,7 @@ progress[value="3"]::-webkit-progress-value {
 }
 
 #result img {
-	width: 80%;
+	width: 100%;
 }
 
 .duration {
@@ -115,11 +140,9 @@ progress[value="3"]::-webkit-progress-value {
 .duration img {
 	width: auto !important;
 }
- .stat img {
+.stat img {
 	width: 50% !important;
-
- }
-
+}
 
 .bold {
 	color: #000;
@@ -267,17 +290,15 @@ progress[value="3"]::-webkit-progress-value {
 		justify-content: space-between;
 	}
 
-	.mainDiv{
-		width:  100%;
+	.mainDiv {
+		width: 100%;
 		flex-direction: row;
 	}
 
 	.duration {
 		justify-content: flex-start;
-		width:  100%;
+		width: 100%;
 	}
-
-
 }
 
 @media screen and (min-width: 1424px) {
@@ -289,5 +310,4 @@ progress[value="3"]::-webkit-progress-value {
 	#search {
 		padding: 20px;
 	}
-
 }
